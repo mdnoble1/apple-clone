@@ -12,7 +12,7 @@ const Navbar = () => {
             <div key={i} className="px-5 text-sm cursor-pointer text-gray hover:text-white transition-all">{nav}</div>
           ))}
         </div>
-        <div className="flex items-baseline gap-7 max-sm:justify-end max-sm:flex-1">
+        <div className="flex items-baseline gap-7 max-sm:justify-end max-sm:flex-1 cursor-pointer">
           <img src={searchImg} alt="search" width={18} height={18} />
           <img src={bagImg} alt="bag" width={18} height={18} />
         </div>
