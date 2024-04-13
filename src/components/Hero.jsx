@@ -2,7 +2,11 @@
 
 const Hero = () => {
   return (
-    <div>Hero</div>
+    <section className="w-full nav-height bg-black relative">
+      <div className="h-5/6 w-full flex-col flex-center">
+        <p className="hero-title">Iphone 15 Pro</p>
+      </div>
+    </section>
   )
 }
 
