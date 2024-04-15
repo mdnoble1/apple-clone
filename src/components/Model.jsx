@@ -4,6 +4,9 @@ import ModelView from "./ModelView";
 import { useRef, useState } from "react";
 import { yellowImg } from "../utils/Index";
 import * as THREE from "three";
+import { Canvas } from "@react-three/fiber";
+import { View } from "@react-three/drei";
+import { models } from "../constants/Index";
 
 // npm i three @react-three/drei @react-three/fiber
 
@@ -61,6 +64,39 @@ const Model = () => {
               item={model}
               size={size}
             ></ModelView>
+
+            <Canvas
+              className="w-full h-full"
+              style={{
+                position: "fixed",
+                top: 0,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                overflow: "hidden",
+              }}
+              eventSource={document.getElementById("root")}
+            >
+              <View.Port></View.Port>
+            </Canvas>
+          </div>
+          {/* model controller part  */}
+          <div className="mx-auto w-full">
+            <p className="text-sm font-light text-center mb-5">{model.title}</p>
+            <div className="flex-center">
+              <ul className="color-container">
+                {models.map((item, i) => (
+                  <li
+                    key={i}
+                    className="w-6 h-6 rounded-full mx-2 cursor-pointer"
+                    style={{
+                      backgroundColor: item.color[0],
+                    }}
+                    onClick={() => setModel(item)}
+                  ></li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
