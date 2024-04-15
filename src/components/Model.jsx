@@ -6,7 +6,7 @@ import { yellowImg } from "../utils/Index";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
-import { models } from "../constants/Index";
+import { models, sizes } from "../constants/Index";
 
 // npm i three @react-three/drei @react-three/fiber
 
@@ -96,6 +96,21 @@ const Model = () => {
                   ></li>
                 ))}
               </ul>
+              <button className="size-btn-container">
+                {sizes.map(({ label, value }) => (
+                  <span
+                    key={label}
+                    className="size-btn"
+                    style={{
+                      backgroundColor: size === value ? "white" : "transparent",
+                      color: size === value ? "black" : "white",
+                    }}
+                    onClick={() => setSize(value)}
+                  >
+                    {label}
+                  </span>
+                ))}
+              </button>
             </div>
           </div>
         </div>
