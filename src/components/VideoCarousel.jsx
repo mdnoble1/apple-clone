@@ -135,6 +135,9 @@ const VideoCarousel = () => {
             case "play": 
                 setVideo((pre) => ({...pre, isPlaying: !pre.isPlaying }))
                 break;
+            case "pause": 
+                setVideo((pre) => ({...pre, isPlaying: !pre.isPlaying }))
+                break;
         
             default:
                 return video;
@@ -150,7 +153,8 @@ const VideoCarousel = () => {
                     <div className="video-carousel_container">
                         <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
                             <video 
-                            id="video" 
+                            id="video"
+                            className={`${list.id == 2 && 'translate-x-44'} pointer-events-none`} 
                             playsInline={true} 
                             preload="auto" 
                             muted
